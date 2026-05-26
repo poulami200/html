@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voter Eligibility Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2em;
+            background-color: #f9f9f9;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 1em;
+            padding: 1em;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            max-width: 400px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            padding: 0.5em;
+            width: 100%;
+            margin: 0.5em 0;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 0.5em 1em;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .message {
+            margin-top: 1em;
+            font-weight: bold;
+        }
+
+        .eligible-list {
+            margin-top: 2em;
+        }
+
+        .eligible-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .eligible-list li {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Voter Eligibility Checker</h2>
+<form id="voterForm">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" required>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" required>
+
+    <button type="submit">Check Eligibility</button>
+
+    <div class="message" id="message"></div>
+</form>
+
+<script>
+    const form = document.getElementById('voterForm');
+    const message = document.getElementById('message');
+    const voterList = document.getElementById('voterList');
+    const eligibleVoters = [];
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const age = parseInt(document.getElementById('age').value.trim());
+
+        if (!name || isNaN(age)) {
+            message.textContent = "Please enter valid details.";
+            message.style.color = "red";
+            return;
+        }
+
+        if (age >= 18) {
+            message.textContent = `${name}, you are eligible to vote.`;
+            message.style.color = "green";
+            eligibleVoters.push({ name, age });
+            updateVoterList();
+        } else {
+            message.textContent = `${name}, you are not eligible to vote.`;
+            message.style.color = "red";
+        }
+
+        form.reset();
+    });
+
+    function updateVoterList() {
+        voterList.innerHTML = "";
+        eligibleVoters.forEach(voter => {
+            const li = document.createElement('li');
+            li.textContent = `${voter.name}, Age: ${voter.age}`;
+            voterList.appendChild(li);
+        });
+    }
+</script>
+</body>
+</html>

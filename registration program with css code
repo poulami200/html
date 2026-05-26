@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>registration</title>
+    <link rel="stylesheet" href="reg.css">
+</head>
+<body>
+<br><br>
+<div class="container">
+    <center>
+        <img src="https://www.gaia.net/storage/images/gcpwb1.png">
+    </center>
+    <center>
+        <h2><b>Online registration<b></h2>
+        <br><br><br>
+        <center>
+            <form>
+                <input type="text" placeholder="Full Name" required>
+                <input type="text" placeholder="email" required>
+                <input type="text" placeholder="password" required>
+                <button type="submit"> Register Now</button>
+            </form>
+        </center>
+</body>
+</html>
+
+CSS code
+
+img{
+    height:100px;
+    width:100px;
+}
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Center the content */
+.container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Logo styling */
+.logo {
+    width: 120px; /* Adjust size as needed */
+    margin-bottom: 20px;
+}
+
+/* Title styling */
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 300px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+button {
+    width: 320px;
+    padding: 12px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e65c00;
+}
+

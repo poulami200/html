@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>facebook login</title>
+    <link rel="stylesheet" href="cs.css">
+</head>
+<body>
+<center>
+    <div class="container flex">
+        <div class="facebook-page flex">
+    <h1 style="color: darkblue;font-family: 'Book Antiqua'">facebook</h1>
+
+        </div>
+        <form>
+    <h3 style="font-family: 'Book Antiqua'">Login into Facebook</h3>
+    <br>
+        <input type="text" placeholder="Your Email or Phone Here" style="width: 300px; height:35px;border-radius: 5px;text-align: center;">
+        <br>
+        <input type="password" placeholder="Your Password"  style="width: 300px; height:35px;border-radius: 5px;text-align: center;">
+        <br>
+        <input type="submit" value="Login"  style= "background-color: royalblue; color: white; width: 300px; height:35px;border-radius: 5px;text-align: center;">
+    <div>
+        <br>
+        <a href="#"> forgot password</a>
+    </div>
+    <h5>------------------------or-------------------------</h5>
+    <input type="button" value="Create New Account" style="background-color: green;color: white; width: 250px; height:45px;border-radius: 5px;text-align: center;">
+    </form>
+</center>
+</body>
+</html>
